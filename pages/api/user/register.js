@@ -45,6 +45,7 @@ export default function userRegisterRoute(req, res) {
       //12 = salt round required for bcrypt
       password: bcrypt.hashSync(password, 12),
       isAdmin,
+      money: isAdmin ? null : 0,
     };
 
     users.push(newUser);
